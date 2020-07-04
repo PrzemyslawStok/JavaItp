@@ -1,2 +1,2 @@
-Main.java
- Main
+com/example/java/Main.java
+ com.example.java.Main
