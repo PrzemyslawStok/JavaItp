@@ -1,7 +1,27 @@
 package com.example.java;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
+class A{
+}
+
+class B extends A{
+
+}
+
+class C extends B{
+    void print(){
+        System.out.println("Tutaj pojawia sie nowa funkcja");
+    }
+}
+
+class D extends C{
+
+}
+
+class E extends D{
+
+}
 
 public class Main {
     ArrayList<Integer> integerArray;
@@ -23,6 +43,10 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        ArrayList<D> array = new ArrayList<>();
+        array.add(new D());
+        fun0(array);
     }
 
     <T,U> void printArrays(ArrayList<T> data1, ArrayList<U> data2) throws Exception{
@@ -47,12 +71,19 @@ public class Main {
         return array;
     }
 
-    void fun0(ArrayList<? extends Number> number){
+    void fun0(ArrayList<? extends C> data){
+        //A->B->C->D->E
+        //to zadziala dla C->D->E
+        for(int i=0;i<data.size();i++){
+            var element = data.get(i);
+            element.print();
+        }
 
     }
 
-    void fun1(ArrayList<? super Number> number){
-
+    void fun1(ArrayList<? super C> data){
+        //A->B->C->D->E
+        //to zadziala dla A->B
     }
 
 

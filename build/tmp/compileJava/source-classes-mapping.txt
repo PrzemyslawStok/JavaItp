@@ -1,2 +1,7 @@
 com/example/java/Main.java
+ com.example.java.A
+ com.example.java.B
+ com.example.java.C
+ com.example.java.D
+ com.example.java.E
  com.example.java.Main
