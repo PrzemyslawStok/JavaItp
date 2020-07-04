@@ -16,11 +16,45 @@ public class Main {
 
     void example(){
         fillArrays();
+
+        try {
+            printArrays(integerArray, stringArray);
+            var data = addArrays(integerArray, integerArray);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    <T,U> void printArrays(ArrayList<T> data1, ArrayList<U> data2){
+    <T,U> void printArrays(ArrayList<T> data1, ArrayList<U> data2) throws Exception{
+        if(data1.size()!=data2.size())
+            throw new Exception("Tablice sa roznej dlugosci, prosze podac identycze...");
+
+        for(int i=0;i<data1.size();i++)
+            System.out.println(data1.get(i)+" : "+data2.get(i));
+    }
+
+    <T> ArrayList<T> addArrays(ArrayList<T> data1, ArrayList<T> data2) throws Exception{
+        if(data1.size()!=data2.size())
+            throw new Exception("Tablice sa roznej dlugosci, prosze podac identycze...");
+
+        for(int i=0;i<data1.size();i++)
+            System.out.println(data1.get(i)+" : "+data2.get(i));
+
+        ArrayList<T> array = new ArrayList<>();
+        array.addAll(data1);
+        array.addAll(data2);
+
+        return array;
+    }
+
+    void fun0(ArrayList<? extends Number> number){
 
     }
+
+    void fun1(ArrayList<? super Number> number){
+
+    }
+
 
     void fillArrays(){
         for(int i=0;i<10;i++){
