@@ -44,9 +44,10 @@ public class Main {
             e.printStackTrace();
         }
 
-        ArrayList<D> array = new ArrayList<>();
-        array.add(new D());
+        ArrayList<C> array = new ArrayList<>();
+        ArrayList<C> array1 = new ArrayList<>();
         fun0(array);
+        fun1(array1);
     }
 
     <T,U> void printArrays(ArrayList<T> data1, ArrayList<U> data2) throws Exception{
@@ -83,7 +84,7 @@ public class Main {
 
     void fun1(ArrayList<? super C> data){
         //A->B->C->D->E
-        //to zadziala dla A->B
+        //to zadziala dla A->B->C
     }
 
 
